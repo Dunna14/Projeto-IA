@@ -1,10 +1,12 @@
-package Person;
+package person;
 
-public class Person {
-    private int lineHero;
-    private int columnHero;
+public abstract class Person {
+    protected int lineHero;
+    protected int columnHero;
 
-    public Person() {
+    public Person(int lineHero, int columnHero) {
+        this.lineHero = lineHero;
+        this.columnHero = columnHero;
     }
 
     public int getLineHero() {

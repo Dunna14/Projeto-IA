@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
     </list>
+    <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +114,7 @@
       <workItem from="1651763675476" duration="17359000" />
       <workItem from="1651834355633" duration="3253000" />
       <workItem from="1652096094648" duration="128000" />
-      <workItem from="1652375223273" duration="1765000" />
+      <workItem from="1652375223273" duration="6260000" />
     </task>
     <servers />
   </component>
