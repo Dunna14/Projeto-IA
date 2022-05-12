@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1ObqOLKkVgswHXnjbCcqq6GZ9SZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/gui" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Utilizador\OneDrive - IPLeiria\Desktop\Search\src\gui" />
+      <recent name="C:\Users\Utilizador\OneDrive - IPLeiria\Desktop\Search\src" />
+      <recent name="C:\Users\Anabela\IdeaProjects\Search\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="gui.Main" />
+      <module name="MummyMaze" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="" />
+      <created>1521195166059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521195166059</updated>
+      <workItem from="1582565107338" duration="11255000" />
+      <workItem from="1583168216627" duration="1607000" />
+      <workItem from="1583183963137" duration="5717000" />
+      <workItem from="1583255433033" duration="1164000" />
+      <workItem from="1614862104320" duration="1238000" />
+      <workItem from="1615309114932" duration="3287000" />
+      <workItem from="1615363748117" duration="3674000" />
+      <workItem from="1615905155525" duration="12625000" />
+      <workItem from="1615939203426" duration="47000" />
+      <workItem from="1615939285171" duration="1225000" />
+      <workItem from="1615982254076" duration="2220000" />
+      <workItem from="1616151480376" duration="4795000" />
+      <workItem from="1616173592479" duration="5095000" />
+      <workItem from="1616192780973" duration="103000" />
+      <workItem from="1616193135725" duration="8085000" />
+      <workItem from="1616454493931" duration="3843000" />
+      <workItem from="1616582111995" duration="1171000" />
+      <workItem from="1616709724171" duration="2446000" />
+      <workItem from="1647991598404" duration="431000" />
+      <workItem from="1647992135553" duration="194000" />
+      <workItem from="1647992382991" duration="3000" />
+      <workItem from="1647992394369" duration="74000" />
+      <workItem from="1648460767596" duration="624000" />
+      <workItem from="1648473965833" duration="3000" />
+      <workItem from="1648501982982" duration="683000" />
+      <workItem from="1648548626805" duration="4092000" />
+      <workItem from="1651763675476" duration="17359000" />
+      <workItem from="1651834355633" duration="3253000" />
+      <workItem from="1652096094648" duration="128000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
