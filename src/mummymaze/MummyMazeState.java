@@ -67,10 +67,11 @@ public class MummyMazeState extends State implements Cloneable {
      */
     public void moveUp() {
         hero.moveUp(matrix);
+        whiteMummy.move(matrix);
         //TODO METER UM DELAY DE ALGUM MODO
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
-            matrix[getLineHero()][getColumnHero()] = 'S';
-        }
+        //if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
+        //    matrix[getLineHero()][getColumnHero()] = 'S';
+        //}
 
         System.out.println(transformMatrixToString(matrix));
     }
