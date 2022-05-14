@@ -1,27 +1,30 @@
 package person;
 
 public abstract class Person {
-    protected int lineHero;
-    protected int columnHero;
+    protected int line;
+    protected int column;
+    protected boolean canMove;
+
 
     public Person(int lineHero, int columnHero) {
-        this.lineHero = lineHero;
-        this.columnHero = columnHero;
+        this.line = lineHero;
+        this.column = columnHero;
     }
 
-    public int getLineHero() {
-        return lineHero;
+    public int getLine() {
+        return line;
     }
 
-    public void setLineHero(int lineHero) {
-        this.lineHero = lineHero;
+    public void setLine(int line) {
+        this.line = line;
     }
 
-    public int getColumnHero() {
-        return columnHero;
+    public int getColumn() {
+        return column;
     }
 
-    public void setColumnHero(int columnHero) {
-        this.columnHero = columnHero;
+    public void setColumn(int column) {
+        this.column = column;
     }
+
 }

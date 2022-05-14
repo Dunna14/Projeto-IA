@@ -4,6 +4,7 @@
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +114,7 @@
       <workItem from="1652375223273" duration="6611000" />
       <workItem from="1652424842759" duration="1000" />
       <workItem from="1652427170423" duration="8000" />
-      <workItem from="1652438410665" duration="548000" />
+      <workItem from="1652438410665" duration="7610000" />
     </task>
     <servers />
   </component>
