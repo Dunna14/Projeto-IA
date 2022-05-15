@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class MummyMazeState extends State implements Cloneable {
 
-    private  char[][] matrix;
+    private char[][] matrix;
     private Hero hero;
     private WhiteMummy whiteMummy;
     private int lineDoor;
@@ -45,7 +45,7 @@ public class MummyMazeState extends State implements Cloneable {
     public boolean canMoveUp() {
         System.out.println(transformMatrixToString(matrix));
         return hero.canMoveUp(matrix);
-        }
+    }
 
     public boolean canMoveRight() {
         return hero.canMoveRight(matrix);
@@ -53,7 +53,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public boolean canMoveDown() {
         return hero.canMoveDown(matrix);
-     }
+    }
 
     public boolean canMoveLeft() {
         return hero.canMoveLeft(matrix);
@@ -78,21 +78,25 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveRight() {
         hero.moveRight(matrix);
+        whiteMummy.move(matrix);
         System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveDown() {
         hero.moveDown(matrix);
+        whiteMummy.move(matrix);
         System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveLeft() {
         hero.moveLeft(matrix);
+        whiteMummy.move(matrix);
         System.out.println(transformMatrixToString(matrix));
     }
 
     public void dontMove() {
         matrix[hero.getLine()][hero.getColumn()] = 'H';
+        whiteMummy.move(matrix);
         System.out.println(transformMatrixToString(matrix));
     }
 
@@ -120,14 +124,14 @@ public class MummyMazeState extends State implements Cloneable {
             }
         }
         return h;
-    }*/
+    }
 
     public int getTileValue(int line, int column) {
         if (!isValidPosition(line, column)) {
             throw new IndexOutOfBoundsException("Invalid position!");
         }
         return matrix[line][column];
-    }
+    }*/
 
     public boolean isValidPosition(int line, int column) {
         return line >= 0 && line < matrix.length && column >= 0 && column < matrix[0].length;

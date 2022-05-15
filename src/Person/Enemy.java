@@ -13,4 +13,12 @@ public abstract class Enemy extends Person {
     public abstract void moveLeft(char[][] matrix);
 
     public abstract void moveRight(char[][] matrix);
+
+    public abstract boolean canMoveUp(char[][] matrix);
+
+    public abstract boolean canMoveDown(char[][] matrix);
+
+    public abstract boolean canMoveLeft(char[][] matrix);
+
+    public abstract boolean canMoveRight(char[][] matrix);
 }
