@@ -15,6 +15,8 @@ public class MummyMazeState extends State implements Cloneable {
     private WhiteMummy whiteMummy;
     private int lineDoor;
     private int columnDoor;
+    private boolean isHeroAlive=true;
+
 
     public MummyMazeState(char[][] matrix) {
         this.matrix = new char[matrix.length][matrix.length];
@@ -27,11 +29,14 @@ public class MummyMazeState extends State implements Cloneable {
                     columnDoor = j;
                 }
                 if (this.matrix[i][j] == 'H') {
-                    hero = new Hero(i, j);
+                    this.hero = new Hero(i, j);
                 }
                 if (this.matrix[i][j] == 'M') {
-                    whiteMummy = new WhiteMummy(i, j);
+                    this.whiteMummy = new WhiteMummy(i, j);
+
+                    //whiteMummy.setAlive(true);
                 }
+
             }
         }
     }
@@ -43,11 +48,13 @@ public class MummyMazeState extends State implements Cloneable {
     }
 
     public boolean canMoveUp() {
-        System.out.println(transformMatrixToString(matrix));
+        // System.out.println(transformMatrixToString(matrix));
+
         return hero.canMoveUp(matrix);
     }
 
     public boolean canMoveRight() {
+
         return hero.canMoveRight(matrix);
     }
 
@@ -66,38 +73,72 @@ public class MummyMazeState extends State implements Cloneable {
      * state was created whether the operation could be executed or not.
      */
     public void moveUp() {
+
         hero.moveUp(matrix);
-        whiteMummy.move(matrix);
+        whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+
+        if (matrix[getLineHero()][getColumnHero()] == 'M') {
+            System.out.println("sheeeeeeeeeeeesh");
+            isHeroAlive = false;
+            System.out.println(isHeroAlive);
+        }
+
+
         //TODO METER UM DELAY DE ALGUM MODO
         //if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
         //    matrix[getLineHero()][getColumnHero()] = 'S';
         //}
 
-        System.out.println(transformMatrixToString(matrix));
+        //    System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveRight() {
+
         hero.moveRight(matrix);
-        whiteMummy.move(matrix);
-        System.out.println(transformMatrixToString(matrix));
+        whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+        if (matrix[getLineHero()][getColumnHero()] == 'M') {
+            this.isHeroAlive = false;
+        }
+
+        // System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveDown() {
+
         hero.moveDown(matrix);
-        whiteMummy.move(matrix);
-        System.out.println(transformMatrixToString(matrix));
+        whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+
+        if (matrix[getLineHero()][getColumnHero()] == 'M') {
+            isHeroAlive = false;
+        }
+        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
+            matrix[getLineHero()][getColumnHero()] = 'S';
+        }
+        // System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveLeft() {
+
+
         hero.moveLeft(matrix);
-        whiteMummy.move(matrix);
-        System.out.println(transformMatrixToString(matrix));
+        whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+        if (matrix[getLineHero()][getColumnHero()] == 'M') {
+            isHeroAlive = false;
+
+        }
+        // System.out.println(transformMatrixToString(matrix));
     }
 
     public void dontMove() {
+
         matrix[hero.getLine()][hero.getColumn()] = 'H';
-        whiteMummy.move(matrix);
-        System.out.println(transformMatrixToString(matrix));
+        whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+
+        if (matrix[getLineHero()][getColumnHero()] == 'M') {
+
+            isHeroAlive = false;
+        }
+        // System.out.println(transformMatrixToString(matrix));
     }
 
     /*public double computeTilesOutOfPlace(MummyMazeState finalState) {
@@ -215,14 +256,17 @@ public class MummyMazeState extends State implements Cloneable {
         return matrix;
     }
 
+    public boolean isHeroAlive() {
+        return isHeroAlive;
+    }
+
     //Usar para DEBUG
     public String transformMatrixToString(char[][] matrix) {
         String s = "";
         for (int k = 0; k < matrix.length; k++) {
             s += String.valueOf(matrix[k]) + "\n";
         }
-
-
         return s;
     }
+
 }
