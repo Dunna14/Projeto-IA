@@ -17,7 +17,7 @@ public class MummyMazeState extends State implements Cloneable {
     private RedMummy redMummy;
     private int lineDoor;
     private int columnDoor;
-    private boolean isHeroAlive=true;
+    private boolean isHeroAlive = true;
 
 
     public MummyMazeState(char[][] matrix) {
@@ -51,13 +51,10 @@ public class MummyMazeState extends State implements Cloneable {
     }
 
     public boolean canMoveUp() {
-        // System.out.println(transformMatrixToString(matrix));
-
         return hero.canMoveUp(matrix);
     }
 
     public boolean canMoveRight() {
-
         return hero.canMoveRight(matrix);
     }
 
@@ -77,132 +74,63 @@ public class MummyMazeState extends State implements Cloneable {
      */
 
     public void moveUp() {
-
         hero.moveUp(matrix);
-        if(whiteMummy!= null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if(redMummy!= null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
-            isHeroAlive = false;
-        }
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
-            matrix[getLineHero()][getColumnHero()] = 'S';
-        }
+        moveEnemies();
+
+        verifyHeroAlive();
+        verifyWinOfHero();
     }
 
     public void moveRight() {
-
         hero.moveRight(matrix);
-        if(whiteMummy!= null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if(redMummy!= null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
-            isHeroAlive = false;
-        }
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
-            matrix[getLineHero()][getColumnHero()] = 'S';
-        }
+        moveEnemies();
 
-        // System.out.println(transformMatrixToString(matrix));
+        verifyHeroAlive();
+        verifyWinOfHero();
     }
 
     public void moveDown() {
-
         hero.moveDown(matrix);
-        if(whiteMummy!= null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
+        moveEnemies();
 
-        if (matrix[getLineHero()][getColumnHero()] == 'M') {
-            isHeroAlive = false;
-        }
-        if(redMummy!= null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
-            isHeroAlive = false;
-        }
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
-            matrix[getLineHero()][getColumnHero()] = 'S';
-        }
-        // System.out.println(transformMatrixToString(matrix));
+        verifyHeroAlive();
+        verifyWinOfHero();
     }
 
     public void moveLeft() {
-
-
         hero.moveLeft(matrix);
-        if(whiteMummy!= null){
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if(redMummy!= null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
-        }
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
-            isHeroAlive = false;
-        }
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
-            matrix[getLineHero()][getColumnHero()] = 'S';
-        }
-        // System.out.println(transformMatrixToString(matrix));
+        moveEnemies();
+
+        verifyHeroAlive();
+        verifyWinOfHero();
     }
 
     public void dontMove() {
-
         matrix[hero.getLine()][hero.getColumn()] = 'H';
-        if(whiteMummy!= null) {
+        moveEnemies();
+        verifyHeroAlive();
+    }
+
+
+    public void moveEnemies() {
+        if (whiteMummy != null) {
             whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
         }
-        if(redMummy!= null) {
+        if (redMummy != null) {
             redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
         }
+    }
+
+    public void verifyHeroAlive() {
         if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
             isHeroAlive = false;
         }
-        // System.out.println(transformMatrixToString(matrix));
     }
 
-    /*public double computeTilesOutOfPlace(MummyMazeState finalState) {
-        double h = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                // Blank is ignored so that the heuristic is admissible
-                if (this.matrix[i][j] != 0 && this.matrix[i][j] != finalState.matrix[i][j]) {
-                    h++;
-                }
-            }
+    public void verifyWinOfHero() {
+        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
+            matrix[getLineHero()][getColumnHero()] = 'S';
         }
-        return h;
-    }
-
-    public double computeTileDistances(MummyMazeState finalState) {
-        double h = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (this.matrix[i][j] != 0) { // Blank is ignored so that the heuristic is admissible
-                    h += Math.abs(i - linesfinalMatrix[this.matrix[i][j]])
-                            + Math.abs(j - colsfinalMatrix[this.matrix[i][j]]);
-                }
-            }
-        }
-        return h;
-    }
-
-    public int getTileValue(int line, int column) {
-        if (!isValidPosition(line, column)) {
-            throw new IndexOutOfBoundsException("Invalid position!");
-        }
-        return matrix[line][column];
-    }*/
-
-    public boolean isValidPosition(int line, int column) {
-        return line >= 0 && line < matrix.length && column >= 0 && column < matrix[0].length;
     }
 
     @Override

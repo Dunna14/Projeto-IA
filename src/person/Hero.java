@@ -1,19 +1,10 @@
 package person;
 
 public class Hero extends Person {
-    //private boolean isAlive;
 
     public Hero(int lineHero, int columnHero) {
         super(lineHero, columnHero);
     }
-
-    /*public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }*/
 
     public boolean canMoveUp(char[][] matrix) {
 

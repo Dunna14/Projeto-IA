@@ -1,20 +1,10 @@
 package person;
 
 public class WhiteMummy extends Mummy {
-    //private boolean isAlive = false;
-    //private Hero hero;
 
     public WhiteMummy(int line, int column) {
         super(line, column);
     }
-
-    /*public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-
-    public boolean isAlive() {
-        return isAlive;
-    }*/
 
     public void move(char[][] matrix, int lineHero, int columnHero, boolean isHeroAlive) {
 
