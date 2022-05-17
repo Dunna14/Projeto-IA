@@ -6,9 +6,9 @@ public abstract class Person {
     protected boolean canMove;
 
 
-    public Person(int lineHero, int columnHero) {
-        this.line = lineHero;
-        this.column = columnHero;
+    public Person(int line, int column) {
+        this.line = line;
+        this.column = column;
     }
 
     public int getLine() {

@@ -4,8 +4,8 @@ public class WhiteMummy extends Mummy {
     //private boolean isAlive = false;
     //private Hero hero;
 
-    public WhiteMummy(int lineHero, int columnHero) {
-        super(lineHero, columnHero);
+    public WhiteMummy(int line, int column) {
+        super(line, column);
     }
 
     /*public void setAlive(boolean alive) {
@@ -79,5 +79,36 @@ public class WhiteMummy extends Mummy {
             }
         }
     }
+    @Override
+    public void moveUp(char[][] matrix) {
+        matrix[getLine()][getColumn()] = '.';
+        setLine(getLine() - 2);
+        matrix[getLine()][getColumn()] = 'M';
+    }
+
+    @Override
+    public void moveDown(char[][] matrix) {
+        matrix[getLine()][getColumn()] = '.';
+        setLine(getLine() + 2);
+        matrix[getLine()][getColumn()] = 'M';
+    }
+
+    @Override
+    public void moveLeft(char[][] matrix) {
+        matrix[getLine()][getColumn()] = '.';
+        setColumn(getColumn() - 2);
+        matrix[getLine()][getColumn()] = 'M';
+    }
+
+    @Override
+    public void moveRight(char[][] matrix) {
+        matrix[getLine()][getColumn()] = '.';
+        setColumn(getColumn() + 2);
+        matrix[getLine()][getColumn()] = 'M';
+    }
+
+
+
+
 }
 

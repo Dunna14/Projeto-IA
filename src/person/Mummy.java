@@ -1,37 +1,9 @@
 package person;
 
-public class Mummy extends Enemy {
+public abstract class Mummy extends Enemy {
 
     public Mummy(int lineHero, int columnHero) {
         super(lineHero, columnHero);
-    }
-
-    @Override
-    public void moveUp(char[][] matrix) {
-        matrix[getLine()][getColumn()] = '.';
-        setLine(getLine() - 2);
-        matrix[getLine()][getColumn()] = 'M';
-    }
-
-    @Override
-    public void moveDown(char[][] matrix) {
-        matrix[getLine()][getColumn()] = '.';
-        setLine(getLine() + 2);
-        matrix[getLine()][getColumn()] = 'M';
-    }
-
-    @Override
-    public void moveLeft(char[][] matrix) {
-        matrix[getLine()][getColumn()] = '.';
-        setColumn(getColumn() - 2);
-        matrix[getLine()][getColumn()] = 'M';
-    }
-
-    @Override
-    public void moveRight(char[][] matrix) {
-        matrix[getLine()][getColumn()] = '.';
-        setColumn(getColumn() + 2);
-        matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override

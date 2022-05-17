@@ -2,27 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/Mummy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/Mummy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/WhiteMummy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/WhiteMummy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/Mummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Mummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchmethods/GraphSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/GraphSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Mummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Mummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <list id="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" name="Changes by Utilizador" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Mummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Mummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,41 +39,16 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java">
+    <file path="$PROJECT_DIR$/src/person/Mummy.java">
       <ranges>
-        <range start1="17" end1="17" start2="17" end2="19" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="29" end1="30" start2="31" end2="32" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="32" end1="33" start2="34" end2="37" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="34" end1="34" start2="38" end2="39" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="45" end1="46" start2="50" end2="52" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="50" end1="50" start2="56" end2="57" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="68" end1="68" start2="75" end2="76" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="69" end1="70" start2="77" end2="86" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="75" end1="76" start2="91" end2="92" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="79" end1="79" start2="95" end2="96" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="80" end1="82" start2="97" end2="103" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="85" end1="85" start2="106" end2="107" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="86" end1="88" start2="108" end2="117" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="91" end1="91" start2="120" end2="122" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="92" end1="94" start2="123" end2="129" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="97" end1="97" start2="132" end2="133" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="98" end1="100" start2="134" end2="141" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="216" end1="216" start2="257" end2="261" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="223" end1="225" start2="268" end2="268" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="227" end1="227" start2="270" end2="271" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
+        <range start1="2" end1="3" start2="2" end2="3" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
+        <range start1="7" end1="35" start2="7" end2="7" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/person/Hero.java">
+    <file path="$PROJECT_DIR$/src/person/WhiteMummy.java">
       <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="7" end1="7" start2="8" end2="16" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="9" end1="9" start2="18" end2="19" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="12" end1="12" start2="22" end2="23" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="29" end1="29" start2="40" end2="41" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
-        <range start1="35" end1="35" start2="47" end2="48" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="47" end1="47" start2="60" end2="61" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="59" end1="59" start2="73" end2="74" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="71" end1="71" start2="86" end2="87" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="6" end1="8" start2="6" end2="8" changelist="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" />
+        <range start1="81" end1="81" start2="81" end2="112" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
       </ranges>
     </file>
   </component>
@@ -99,10 +65,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/gui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -177,6 +144,8 @@
       <workItem from="1652438410665" duration="11320000" />
       <workItem from="1652711955949" duration="1469000" />
       <workItem from="1652718641084" duration="7892000" />
+      <workItem from="1652736600380" duration="1000" />
+      <workItem from="1652787515742" duration="2692000" />
     </task>
     <servers />
   </component>

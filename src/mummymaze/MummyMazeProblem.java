@@ -17,6 +17,7 @@ public class MummyMazeProblem extends Problem<MummyMazeState> {
             add(new ActionUp());
             add(new ActionRight());
             add(new ActionLeft());
+            add(new ActionDontMove());
         }};
     }
 
