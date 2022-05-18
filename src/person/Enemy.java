@@ -6,19 +6,31 @@ public abstract class Enemy extends Person {
         super(lineHero, columnHero);
     }
 
-    public abstract void moveUp(char[][] matrix);
+    public abstract void moveUp(char[][] matrix,int lineTrap,int columntrap);
 
-    public abstract void moveDown(char[][] matrix);
+    public abstract void moveDown(char[][] matrix,int lineTrap,int columntrap);
 
-    public abstract void moveLeft(char[][] matrix);
+    public abstract void moveLeft(char[][] matrix,int lineTrap,int columntrap);
 
-    public abstract void moveRight(char[][] matrix);
+    public abstract void moveRight(char[][] matrix,int lineTrap,int columntrap);
 
-    public abstract boolean canMoveUp(char[][] matrix);
+    @Override
+    public boolean canMoveUp(char[][] matrix) {
+        return (getLine() > 1 && matrix[getLine() - 1][getColumn()] != '-');
+    }
 
-    public abstract boolean canMoveDown(char[][] matrix);
+    @Override
+    public boolean canMoveDown(char[][] matrix) {
+        return (getLine() < 11 && matrix[getLine() + 1][getColumn()] != '-');
+    }
 
-    public abstract boolean canMoveLeft(char[][] matrix);
+    @Override
+    public boolean canMoveLeft(char[][] matrix) {
+        return (getColumn() > 1 && matrix[getLine()][getColumn() - 1] != '|');
+    }
 
-    public abstract boolean canMoveRight(char[][] matrix);
+    @Override
+    public boolean canMoveRight(char[][] matrix) {
+        return (getColumn() < 11 && matrix[getLine()][getColumn() + 1] != '|');
+    }
 }

@@ -1,18 +1,18 @@
 package person;
 
-public class WhiteMummy extends Mummy {
+public class Scorpion extends Enemy{
 
-    public WhiteMummy(int line, int column) {
+    public Scorpion(int line, int column) {
         super(line, column);
     }
+    private boolean isInTrap =false;
 
     public void move(char[][] matrix, int lineHero, int columnHero, boolean isHeroAlive,int lineTrap, int columnTrap) {
-
-
-        for (int i = 0; i < 2; i++) {
+        isInTrap =false;
             if (!isHeroAlive) {
                 return;
             } else {
+                System.out.println("Armadilha: "+lineTrap+" "+lineTrap);
                 //Verificar se a mumia já está na mesma coluna do heroi
                 if (getColumn() == columnHero) {
                     //Verificar se a mumia está a baixo do heroi
@@ -64,41 +64,54 @@ public class WhiteMummy extends Mummy {
                     }
                 }
             }
-            if (matrix[lineHero][columnHero] == 'M') {
-                isHeroAlive=false;
-            }
+        if (matrix[lineHero][columnHero] == 'E') {
+            isHeroAlive=false;
         }
+
     }
     @Override
-    public void moveUp(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveUp(char[][] matrix,int lineTrap,int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setLine(getLine() - 2);
-        matrix[getLine()][getColumn()] = 'M';
+        matrix[getLine()][getColumn()] = 'E';
     }
 
     @Override
-    public void moveDown(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveDown(char[][] matrix,int lineTrap,int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setLine(getLine() + 2);
-        matrix[getLine()][getColumn()] = 'M';
+        matrix[getLine()][getColumn()] = 'E';
     }
 
     @Override
-    public void moveLeft(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveLeft(char[][] matrix,int lineTrap,int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setColumn(getColumn() - 2);
-        matrix[getLine()][getColumn()] = 'M';
+        matrix[getLine()][getColumn()] = 'E';
     }
 
     @Override
-    public void moveRight(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveRight(char[][] matrix,int lineTrap,int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setColumn(getColumn() + 2);
-        matrix[getLine()][getColumn()] = 'M';
+        matrix[getLine()][getColumn()] = 'E';
     }
-
-
 
 
 }
-

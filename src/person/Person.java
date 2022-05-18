@@ -27,4 +27,12 @@ public abstract class Person {
         this.column = column;
     }
 
+    public abstract boolean canMoveUp(char[][] matrix);
+
+    public abstract boolean canMoveDown(char[][] matrix);
+
+    public abstract boolean canMoveLeft(char[][] matrix);
+
+    public abstract boolean canMoveRight(char[][] matrix);
+
 }

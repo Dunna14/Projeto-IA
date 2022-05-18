@@ -4,6 +4,7 @@ import agent.Action;
 import agent.State;
 import person.Hero;
 import person.RedMummy;
+import person.Scorpion;
 import person.WhiteMummy;
 
 import java.util.ArrayList;
@@ -15,8 +16,11 @@ public class MummyMazeState extends State implements Cloneable {
     private Hero hero;
     private WhiteMummy whiteMummy;
     private RedMummy redMummy;
+    private Scorpion scorpion;
     private int lineDoor;
     private int columnDoor;
+    private int lineTrap;
+    private int columnTrap;
     private boolean isHeroAlive = true;
 
 
@@ -30,6 +34,11 @@ public class MummyMazeState extends State implements Cloneable {
                     lineDoor = i;
                     columnDoor = j;
                 }
+                if (this.matrix[i][j] == 'A') {
+                    lineTrap=i;
+                    columnTrap=j;
+                    System.out.println("sheeesh");
+                }
                 if (this.matrix[i][j] == 'H') {
                     this.hero = new Hero(i, j);
                 }
@@ -39,9 +48,20 @@ public class MummyMazeState extends State implements Cloneable {
                 if (this.matrix[i][j] == 'V') {
                     this.redMummy = new RedMummy(i, j);
                 }
+                if (this.matrix[i][j] == 'E') {
+                    this.scorpion = new Scorpion(i, j);
+                }
 
             }
         }
+    }
+
+    public int getLineTrap() {
+        return lineTrap;
+    }
+
+    public int getColumnTrap() {
+        return columnTrap;
     }
 
     @Override
@@ -114,15 +134,18 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveEnemies() {
         if (whiteMummy != null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
         }
         if (redMummy != null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive);
+            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
+        }
+        if (scorpion != null) {
+            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
         }
     }
 
     public void verifyHeroAlive() {
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V') {
+        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V' || matrix[getLineHero()][getColumnHero()] == 'E') {
             isHeroAlive = false;
         }
     }
