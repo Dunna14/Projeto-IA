@@ -13,6 +13,7 @@ public class WhiteMummy extends Mummy {
             if (!isHeroAlive) {
                 return;
             } else {
+                System.out.println("Armadilha: "+lineTrap+" "+columnTrap);
                 //Verificar se a mumia já está na mesma coluna do heroi
                 if (getColumn() == columnHero) {
                     //Verificar se a mumia está a baixo do heroi
@@ -70,29 +71,45 @@ public class WhiteMummy extends Mummy {
         }
     }
     @Override
-    public void moveUp(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveUp(char[][] matrix,int lineTrap, int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setLine(getLine() - 2);
         matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
-    public void moveDown(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveDown(char[][] matrix,int lineTrap, int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setLine(getLine() + 2);
         matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
-    public void moveLeft(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveLeft(char[][] matrix,int lineTrap, int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setColumn(getColumn() - 2);
         matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
-    public void moveRight(char[][] matrix,int lineTrap, int columnTrap) {
-        matrix[getLine()][getColumn()] = '.';
+    public void moveRight(char[][] matrix,int lineTrap, int columntrap) {
+        if(getLine()==lineTrap && getColumn() == columntrap){
+            matrix[getLine()][getColumn()] = 'A';
+        }else {
+            matrix[getLine()][getColumn()] = '.';
+        }
         setColumn(getColumn() + 2);
         matrix[getLine()][getColumn()] = 'M';
     }

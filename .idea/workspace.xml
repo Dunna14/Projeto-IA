@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/Mummy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/Mummy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/person/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Mummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Mummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/RedMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/RedMummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Scorpion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
@@ -61,7 +54,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -135,6 +128,10 @@
       <workItem from="1652787515742" duration="2692000" />
       <workItem from="1652804613087" duration="1402000" />
       <workItem from="1652869936887" duration="6617000" />
+      <workItem from="1652974880309" duration="571000" />
+      <workItem from="1653315647074" duration="100000" />
+      <workItem from="1653315773822" duration="152000" />
+      <workItem from="1653382744553" duration="2656000" />
     </task>
     <servers />
   </component>

@@ -21,6 +21,10 @@ public class MummyMazeState extends State implements Cloneable {
     private int columnDoor;
     private int lineTrap;
     private int columnTrap;
+    private int lineKey;
+    private int columnKey;
+    private int lineFence;//é a porta mas como já existe um lineDoor e columnDoor dei este nome. ainda pode mudar!!
+    private int columnFence;
     private boolean isHeroAlive = true;
 
 
@@ -37,7 +41,14 @@ public class MummyMazeState extends State implements Cloneable {
                 if (this.matrix[i][j] == 'A') {
                     lineTrap=i;
                     columnTrap=j;
-                    System.out.println("sheeesh");
+                }
+                if (this.matrix[i][j] == 'C'){
+                    lineKey=i;
+                    columnKey=j;
+                }
+                if (this.matrix[i][j] == '=') {//com as coodernadas guardadas falta verificar se a chave ainda existe na matriz depois de nao existir é so fazer a porta(fence) abrir,aka desaparecer
+                    lineFence=i;
+                    columnFence=j;
                 }
                 if (this.matrix[i][j] == 'H') {
                     this.hero = new Hero(i, j);

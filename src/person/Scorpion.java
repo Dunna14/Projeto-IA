@@ -1,5 +1,7 @@
 package person;
 
+import java.util.Arrays;
+
 public class Scorpion extends Enemy{
 
     public Scorpion(int line, int column) {
@@ -12,7 +14,7 @@ public class Scorpion extends Enemy{
             if (!isHeroAlive) {
                 return;
             } else {
-                System.out.println("Armadilha: "+lineTrap+" "+lineTrap);
+                System.out.println("Armadilha: "+lineTrap+" "+columnTrap);
                 //Verificar se a mumia já está na mesma coluna do heroi
                 if (getColumn() == columnHero) {
                     //Verificar se a mumia está a baixo do heroi
