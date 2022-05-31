@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Scorpion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <list id="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" name="Changes by Utilizador" comment="" />
@@ -132,6 +130,7 @@
       <workItem from="1653315647074" duration="100000" />
       <workItem from="1653315773822" duration="152000" />
       <workItem from="1653382744553" duration="2656000" />
+      <workItem from="1653996176084" duration="537000" />
     </task>
     <servers />
   </component>
@@ -148,6 +147,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
