@@ -1,8 +1,8 @@
 package objectsInGame;
 
-public class Object {
-    private int line;
-    private int column;
+public abstract class Object {
+    protected int line;
+    protected int column;
 
     public Object(int line, int column) {
         this.line = line;

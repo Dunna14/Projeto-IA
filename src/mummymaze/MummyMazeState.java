@@ -2,6 +2,9 @@ package mummymaze;
 
 import agent.Action;
 import agent.State;
+import objectsInGame.Key;
+import objectsInGame.Stair;
+import objectsInGame.Trap;
 import person.Hero;
 import person.RedMummy;
 import person.Scorpion;
@@ -17,12 +20,10 @@ public class MummyMazeState extends State implements Cloneable {
     private WhiteMummy whiteMummy;
     private RedMummy redMummy;
     private Scorpion scorpion;
-    private int lineDoor;
-    private int columnDoor;
-    private int lineTrap;
-    private int columnTrap;
-    private int lineKey;
-    private int columnKey;
+    private Stair stair;
+    private int trapLine;
+    private int trapColumn;
+    private Key key;
     private int lineFence;//é a porta mas como já existe um lineDoor e columnDoor dei este nome. ainda pode mudar!!
     private int columnFence;
     private boolean isHeroAlive = true;
@@ -35,16 +36,14 @@ public class MummyMazeState extends State implements Cloneable {
             for (int j = 0; j < matrix.length; j++) {
                 this.matrix[i][j] = matrix[i][j];
                 if (this.matrix[i][j] == 'S') {
-                    lineDoor = i;
-                    columnDoor = j;
+                    this.stair = new Stair(i, j);
                 }
                 if (this.matrix[i][j] == 'A') {
-                    lineTrap=i;
-                    columnTrap=j;
+                    trapLine = i;
+                    trapColumn = j;
                 }
                 if (this.matrix[i][j] == 'C'){
-                    lineKey=i;
-                    columnKey=j;
+                    this.key = new Key(i, j);
                 }
                 if (this.matrix[i][j] == '=') {//com as coodernadas guardadas falta verificar se a chave ainda existe na matriz depois de nao existir é so fazer a porta(fence) abrir,aka desaparecer
                     lineFence=i;
@@ -67,13 +66,7 @@ public class MummyMazeState extends State implements Cloneable {
         }
     }
 
-    public int getLineTrap() {
-        return lineTrap;
-    }
 
-    public int getColumnTrap() {
-        return columnTrap;
-    }
 
     @Override
     public void executeAction(Action action) {
@@ -162,7 +155,7 @@ public class MummyMazeState extends State implements Cloneable {
     }
 
     public void verifyWinOfHero() {
-        if (getLineHero() == getLineDoor() && getColumnHero() == getColumnDoor()) {
+        if (getLineHero() == getLineStair() && getColumnHero() == getColumnStair()) {
             matrix[getLineHero()][getColumnHero()] = 'S';
         }
     }
@@ -233,12 +226,20 @@ public class MummyMazeState extends State implements Cloneable {
         return hero.getColumn();
     }
 
-    public int getLineDoor() {
-        return lineDoor;
+    public int getLineStair() {
+        return stair.getLine();
     }
 
-    public int getColumnDoor() {
-        return columnDoor;
+    public int getColumnStair() {
+        return stair.getColumn();
+    }
+
+    public int getLineTrap() {
+        return trapLine;
+    }
+
+    public int getColumnTrap() {
+        return trapColumn;
     }
 
     public char[][] getMatrix() {
