@@ -2,9 +2,9 @@ package mummymaze;
 
 import agent.Action;
 import agent.State;
+import objectsInGame.Door;
 import objectsInGame.Key;
 import objectsInGame.Stair;
-import objectsInGame.Trap;
 import person.Hero;
 import person.RedMummy;
 import person.Scorpion;
@@ -24,8 +24,7 @@ public class MummyMazeState extends State implements Cloneable {
     private int trapLine;
     private int trapColumn;
     private Key key;
-    private int lineFence;//é a porta mas como já existe um lineDoor e columnDoor dei este nome. ainda pode mudar!!
-    private int columnFence;
+    private Door door;
     private boolean isHeroAlive = true;
 
 
@@ -42,12 +41,11 @@ public class MummyMazeState extends State implements Cloneable {
                     trapLine = i;
                     trapColumn = j;
                 }
-                if (this.matrix[i][j] == 'C'){
+                if (this.matrix[i][j] == 'C') {
                     this.key = new Key(i, j);
                 }
                 if (this.matrix[i][j] == '=') {//com as coodernadas guardadas falta verificar se a chave ainda existe na matriz depois de nao existir é so fazer a porta(fence) abrir,aka desaparecer
-                    lineFence=i;
-                    columnFence=j;
+                    this.door = new Door(i, j);
                 }
                 if (this.matrix[i][j] == 'H') {
                     this.hero = new Hero(i, j);
@@ -65,7 +63,6 @@ public class MummyMazeState extends State implements Cloneable {
             }
         }
     }
-
 
 
     @Override
@@ -138,13 +135,13 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveEnemies() {
         if (whiteMummy != null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
+            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
         }
         if (redMummy != null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
+            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
         }
         if (scorpion != null) {
-            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive,getLineTrap(),getColumnTrap());
+            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
         }
     }
 
