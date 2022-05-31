@@ -11,17 +11,25 @@ public class Door extends Object {
         return isOpen;
     }
 
+    public void setOpen(boolean isOpen) {
+        this.isOpen = isOpen;
+    }
+
     public void open(char[][] matrix) {
-        if (!isOpen) {
             isOpen = true;
             matrix[getLine()][getColumn()] = '_';
-        }
     }
 
     public void close(char[][] matrix) {
-        if (isOpen) {
             isOpen = false;
             matrix[getLine()][getColumn()] = '=';
+    }
+
+    public void set(char[][] matrix) {
+        if (isOpen) {
+            close(matrix);
+        } else {
+            open(matrix);
         }
     }
 }

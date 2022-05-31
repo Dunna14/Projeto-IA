@@ -44,8 +44,12 @@ public class MummyMazeState extends State implements Cloneable {
                 if (this.matrix[i][j] == 'C') {
                     this.key = new Key(i, j);
                 }
-                if (this.matrix[i][j] == '=') {//com as coodernadas guardadas falta verificar se a chave ainda existe na matriz depois de nao existir é so fazer a porta(fence) abrir,aka desaparecer
+                if (this.matrix[i][j] == '=' || this.matrix[i][j] == '”') {
                     this.door = new Door(i, j);
+                    door.setOpen(false);
+                } else if (this.matrix[i][j] == '_' || this.matrix[i][j] == ')') {
+                    this.door = new Door(i, j);
+                    door.setOpen(true);
                 }
                 if (this.matrix[i][j] == 'H') {
                     this.hero = new Hero(i, j);
@@ -96,6 +100,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveUp() {
         hero.moveUp(matrix);
+        setDoor();
         moveEnemies();
 
         verifyHeroAlive();
@@ -104,6 +109,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveRight() {
         hero.moveRight(matrix);
+        setDoor();
         moveEnemies();
 
         verifyHeroAlive();
@@ -112,6 +118,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveDown() {
         hero.moveDown(matrix);
+        setDoor();
         moveEnemies();
 
         verifyHeroAlive();
@@ -120,6 +127,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveLeft() {
         hero.moveLeft(matrix);
+        setDoor();
         moveEnemies();
 
         verifyHeroAlive();
@@ -154,6 +162,14 @@ public class MummyMazeState extends State implements Cloneable {
     public void verifyWinOfHero() {
         if (getLineHero() == getLineStair() && getColumnHero() == getColumnStair()) {
             matrix[getLineHero()][getColumnHero()] = 'S';
+        }
+    }
+
+    public void setDoor() {
+        if (key != null) {
+            if (getLineHero() == getLineKey() && getColumnHero() == getColumnKey()) {
+                door.set(matrix);
+            }
         }
     }
 
@@ -237,6 +253,14 @@ public class MummyMazeState extends State implements Cloneable {
 
     public int getColumnTrap() {
         return trapColumn;
+    }
+
+    public int getLineKey() {
+        return key.getLine();
+    }
+
+    public int getColumnKey() {
+        return key.getColumn();
     }
 
     public char[][] getMatrix() {
