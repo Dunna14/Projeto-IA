@@ -15,21 +15,31 @@ public class Door extends Object {
         this.isOpen = isOpen;
     }
 
-    public void open(char[][] matrix) {
+    public void openHorizontal(char[][] matrix) {
             isOpen = true;
             matrix[getLine()][getColumn()] = '_';
     }
 
-    public void close(char[][] matrix) {
-            isOpen = false;
-            matrix[getLine()][getColumn()] = '=';
+    public void openVertical(char[][] matrix) {
+        isOpen = true;
+        matrix[getLine()][getColumn()] = ')';
     }
 
-    public void set(char[][] matrix) {
+    public void closeVertical(char[][] matrix) {
+            //isOpen = false;
+            matrix[getLine()][getColumn()] = '"';
+    }
+
+    public void closeHorizontal(char[][] matrix) {
+        isOpen = false;
+        matrix[getLine()][getColumn()] = '=';
+    }
+
+    /*public void set(char[][] matrix) {
         if (isOpen) {
             close(matrix);
         } else {
             open(matrix);
         }
-    }
+    }*/
 }

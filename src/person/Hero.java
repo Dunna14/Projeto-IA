@@ -6,38 +6,44 @@ public class Hero extends Person {
         super(lineHero, columnHero);
     }
 
-    //ADICIONAR AS 2 PORTAS NOS CANMOVES
     public boolean canMoveUp(char[][] matrix) {
 
         return (getLine() == 1 && matrix[getLine() - 1][getColumn()] == 'S')
-                || (getLine() > 1 && matrix[getLine() - 1][getColumn()] != '-' && matrix[getLine() - 1][getColumn()] != 'A'
-                && matrix[getLine() - 2][getColumn()] == '.');
+                || (getLine() > 1 && (matrix[getLine() - 2][getColumn()] == '.'
+                || matrix[getLine() - 2][getColumn()] == 'C')
+                && matrix[getLine() - 1][getColumn()] != '-'
+                && matrix[getLine() - 1][getColumn()] != '=');
 
     }
 
     public boolean canMoveRight(char[][] matrix) {
 
         return (getColumn() == 11 && matrix[getLine()][getColumn() + 1] == 'S')
-                || (getColumn() < 11 && matrix[getLine()][getColumn() + 1] != '|' && matrix[getLine()][getColumn() + 1] != 'A'
-                && matrix[getLine()][getColumn() + 2] == '.');
+                || (getColumn() < 11 && (matrix[getLine()][getColumn() + 2] == '.'
+                || matrix[getLine()][getColumn() + 2] == 'C')
+                && matrix[getLine()][getColumn() + 1] != '|'
+                && matrix[getLine()][getColumn() + 1] != '"');
     }
 
     public boolean canMoveDown(char[][] matrix) {
 
         return (getLine() == 11 && matrix[getLine() + 1][getColumn()] == 'S')
-                || (getLine() < 11 && matrix[getLine() + 1][getColumn()] != '-' && matrix[getLine() + 1][getColumn()] != 'A'
-                && matrix[getLine() + 2][getColumn()] == '.');
+                || (getLine() < 11 && (matrix[getLine() + 2][getColumn()] == '.'
+                || matrix[getLine() + 2][getColumn()] == 'C')
+                && matrix[getLine() + 1][getColumn()] != '-'
+                && matrix[getLine() + 1][getColumn()] != '=');
     }
 
     public boolean canMoveLeft(char[][] matrix) {
 
         return (getColumn() == 1 && matrix[getLine()][getColumn() - 1] == 'S')
-                || (getColumn() > 1 && matrix[getLine()][getColumn() - 1] != '|' && matrix[getLine()][getColumn() - 1] != 'A'
-                && matrix[getLine()][getColumn() - 2] == '.');
+                || (getColumn() > 1 && (matrix[getLine()][getColumn() - 2] == '.'
+                || matrix[getLine()][getColumn() - 2] == 'C')
+                && matrix[getLine()][getColumn() - 1] != '|'
+                && matrix[getLine()][getColumn() - 1] != '"');
     }
 
     public void moveUp(char[][] matrix) {
-
         if (getLine() == 1) {
             matrix[getLine()][getColumn()] = '.';
             setLine(getLine() - 1);
@@ -76,7 +82,6 @@ public class Hero extends Person {
     }
 
     public void moveLeft(char[][] matrix) {
-
         if (getColumn() == 1) {
             matrix[getLine()][getColumn()] = '.';
             setColumn(getColumn() - 1);

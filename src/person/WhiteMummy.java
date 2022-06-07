@@ -10,135 +10,98 @@ public class WhiteMummy extends Mummy {
         super(line, column);
     }
 
-    public void move(char[][] matrix, int lineHero, int columnHero, boolean isHeroAlive, LinkedList<Trap> traps) {
+    public boolean move(char[][] matrix, int lineHero, int columnHero, boolean isHeroAlive, LinkedList<Trap> traps) {
 
         for (int i = 0; i < 2; i++) {
             if (!isHeroAlive) {
-                return;
-            } else {
-                //System.out.println("Armadilha: " + lineTrap + " " + columnTrap);
-                //Verificar se a mumia já está na mesma coluna do heroi
-                if (getColumn() == columnHero) {
-                    //Verificar se a mumia está a baixo do heroi
-                    if (getLine() > lineHero) {
-                        if (canMoveUp(matrix)) {
-                            moveUp(matrix, traps);
-                        }
-                        //Caso contrario, a mumia está a cima do heroi
-                    } else {
-                        if (canMoveDown(matrix)) {
-                            moveDown(matrix, traps);
-                        }
-                    }
-                    //Caso contrario, verificar se a mumia está a direita do heroi
-                } else if (getColumn() > columnHero) {
-                    if (canMoveLeft(matrix)) {
-                        moveLeft(matrix, traps);
-                        //Caso não possa ir para a esquerda devido a uma parede
-                    } else {
-                        //Verificar se a mumia está a baixo do heroi
-                        if (getLine() > lineHero) {
-                            if (canMoveUp(matrix)) {
-                                moveUp(matrix, traps);
-                            }
-                            //Caso contrario, a mumia está a cima do heroi
-                        } else {
-                            if (canMoveDown(matrix)) {
-                                moveDown(matrix, traps);
-                            }
-                        }
-                    }
-                    //Verificar se a mumia está a esquerda do heroi
-                } else {
-                    if (canMoveRight(matrix)) {
-                        moveRight(matrix, traps);
-                        //Caso não possa ir para a direita devido a uma parede
-                    } else {
-                        //Verificar se a mumia está a baixo do heroi
-                        if (getLine() > lineHero) {
-                            if (canMoveUp(matrix)) {
-                                moveUp(matrix, traps);
-                            }
-                            //Caso contrario, a mumia está a cima do heroi
-                        } else {
-                            if (canMoveDown(matrix)) {
-                                moveDown(matrix, traps);
-                            }
-                        }
-                    }
-                }
+                return isHeroAlive;
             }
-            if (matrix[lineHero][columnHero] == 'M') {
-                isHeroAlive = false;
+            //Verificar se a mumia já está à direita do heroi
+            if (getColumn() > columnHero && canMoveLeft(matrix)) {
+
+                moveLeft(matrix, traps);
+
+
+                //Verificar se a mumia está a esquerda do heroi
+            } else if (getColumn() < columnHero && canMoveRight(matrix)) {
+
+                moveRight(matrix, traps);
+
+            } else if (getLine() > lineHero && canMoveUp(matrix)) {
+
+                moveUp(matrix, traps);
+
+                //Caso contrario, a mumia está a cima do heroi
+            } else if (getLine() < lineHero && canMoveDown(matrix)) {
+
+                moveDown(matrix, traps);
             }
 
+            matrix[getLine()][getColumn()] = 'M';
         }
+
+
+        if (matrix[lineHero][columnHero] == 'M') {
+            isHeroAlive = false;
+        }
+        return isHeroAlive;
     }
 
     @Override
     public void moveUp(char[][] matrix, LinkedList<Trap> traps) {
-        for (Trap trap : traps) {
-            if (getLine() == trap.getLine() && getColumn() == trap.getColumn()) {
-                matrix[getLine()][getColumn()] = 'A';
-            } else {
-                matrix[getLine()][getColumn()] = '.';
-            }
-        }
-        if (traps.isEmpty()) {
-            matrix[getLine()][getColumn()] = '.';
-        }
+        matrix[getLine()][getColumn()] = '.';
         setLine(getLine() - 2);
-        matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
     public void moveDown(char[][] matrix, LinkedList<Trap> traps) {
-        for (Trap trap : traps) {
-            if (getLine() == trap.getLine() && getColumn() == trap.getColumn()) {
-                matrix[getLine()][getColumn()] = 'A';
-            } else {
-                matrix[getLine()][getColumn()] = '.';
-            }
-        }
-        if (traps.isEmpty()) {
-            matrix[getLine()][getColumn()] = '.';
-        }
+        matrix[getLine()][getColumn()] = '.';
         setLine(getLine() + 2);
-        matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
     public void moveLeft(char[][] matrix, LinkedList<Trap> traps) {
-        for (Trap trap : traps) {
-            if (getLine() == trap.getLine() && getColumn() == trap.getColumn()) {
-                matrix[getLine()][getColumn()] = 'A';
-            } else {
-                matrix[getLine()][getColumn()] = '.';
-            }
-        }
-        if (traps.isEmpty()) {
-            matrix[getLine()][getColumn()] = '.';
-        }
+        matrix[getLine()][getColumn()] = '.';
         setColumn(getColumn() - 2);
-        matrix[getLine()][getColumn()] = 'M';
     }
 
     @Override
     public void moveRight(char[][] matrix, LinkedList<Trap> traps) {
-        for (Trap trap : traps) {
-            if (getLine() == trap.getLine() && getColumn() == trap.getColumn()) {
-                matrix[getLine()][getColumn()] = 'A';
-            } else {
-                matrix[getLine()][getColumn()] = '.';
-            }
-        }
-        if (traps.isEmpty()) {
-            matrix[getLine()][getColumn()] = '.';
-        }
+        matrix[getLine()][getColumn()] = '.';
         setColumn(getColumn() + 2);
-        matrix[getLine()][getColumn()] = 'M';
     }
 
+
+    public void hierarchy(char[][] matrix, LinkedList<WhiteMummy> whiteMummies, LinkedList<RedMummy> redMummies,
+                          LinkedList<Scorpion> scorpions) {
+        int lineMummy;
+        int columnMummy;
+        for (int i = 0; i < whiteMummies.size(); i++) {
+            lineMummy = whiteMummies.get(i).getLine();
+            columnMummy = whiteMummies.get(i).getColumn();
+
+            for (int j = 0; j < whiteMummies.size(); j++) {
+                if (i != j) {
+                    //FUNCIONA
+                    if (matrix[whiteMummies.get(j).getLine()][whiteMummies.get(j).getColumn()] == matrix[lineMummy][columnMummy]) {
+                        whiteMummies.remove(j);
+                    }
+                }
+            }
+
+            for (int j = 0; j < redMummies.size(); j++) {
+                if (matrix[redMummies.get(j).getLine()][redMummies.get(j).getColumn()] == matrix[lineMummy][columnMummy]) {
+                    redMummies.remove(j);
+                }
+            }
+
+            for (int j = 0; j < scorpions.size(); j++) {
+                if (matrix[scorpions.get(j).getLine()][scorpions.get(j).getColumn()] == matrix[lineMummy][columnMummy]) {
+                    scorpions.remove(j);
+                }
+            }
+        }
+    }
 
 }
 

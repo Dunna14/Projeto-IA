@@ -18,23 +18,29 @@ public abstract class Enemy extends Person {
 
     public abstract void moveRight(char[][] matrix, LinkedList<Trap> traps);
 
+    //public abstract void hierarchy(char[][] matrix);
+
     @Override
     public boolean canMoveUp(char[][] matrix) {
-        return (getLine() > 1 && matrix[getLine() - 1][getColumn()] != '-');
+        return (getLine() > 1 && (matrix[getLine() - 1][getColumn()] != '-'
+                && matrix[getLine() - 1][getColumn()] != '='));
     }
 
     @Override
     public boolean canMoveDown(char[][] matrix) {
-        return (getLine() < 11 && matrix[getLine() + 1][getColumn()] != '-');
+        return (getLine() < 11 && (matrix[getLine() + 1][getColumn()] != '-'
+                && matrix[getLine() + 1][getColumn()] != '='));
     }
 
     @Override
     public boolean canMoveLeft(char[][] matrix) {
-        return (getColumn() > 1 && matrix[getLine()][getColumn() - 1] != '|');
+        return (getColumn() > 1 && (matrix[getLine()][getColumn() - 1] != '|'
+                && matrix[getLine()][getColumn() - 1] != '"'));
     }
 
     @Override
     public boolean canMoveRight(char[][] matrix) {
-        return (getColumn() < 11 && matrix[getLine()][getColumn() + 1] != '|');
+        return (getColumn() < 11 && (matrix[getLine()][getColumn() + 1] != '|'
+                && matrix[getLine()][getColumn() + 1] != '"'));
     }
 }

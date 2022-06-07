@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -37,7 +38,7 @@ public class MainFrame extends JFrame {
     public State state;
 
     private char[][] initialMatrix = new char[13][13];
-    private MummyMazeAgent agent = new MummyMazeAgent(new MummyMazeState(initialMatrix));
+    private MummyMazeAgent agent = new MummyMazeAgent(new MummyMazeState(initialMatrix, null, new LinkedList<>(), new LinkedList<>()));
     private JComboBox comboBoxSearchMethods;
     private JComboBox comboBoxHeuristics;
     private JLabel labelSearchParameter = new JLabel("limit/beam size:");

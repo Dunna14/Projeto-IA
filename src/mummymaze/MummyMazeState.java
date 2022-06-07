@@ -19,19 +19,24 @@ public class MummyMazeState extends State implements Cloneable {
 
     private char[][] matrix;
     private Hero hero;
-    private WhiteMummy whiteMummy;
-    private RedMummy redMummy;
-    private Scorpion scorpion;
+    private LinkedList<WhiteMummy> whiteMummys;
+    private LinkedList<RedMummy> redMummys;
+    private LinkedList<Scorpion> scorpions;
     private Stair stair;
     private LinkedList<Trap> traps;
     private Key key;
-    private Door door;
+    private LinkedList<Door> doors;
     private boolean isHeroAlive = true;
 
 
-    public MummyMazeState(char[][] matrix) {
+    public MummyMazeState(char[][] matrix, Key key, LinkedList<Door> doors, LinkedList<Trap> traps) {
         this.matrix = new char[matrix.length][matrix.length];
-        traps = new LinkedList<>();
+        this.traps = traps;
+        this.doors = doors;
+        this.key = key;
+        whiteMummys = new LinkedList<>();
+        redMummys = new LinkedList<>();
+        scorpions = new LinkedList<>();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -42,27 +47,17 @@ public class MummyMazeState extends State implements Cloneable {
                 if (this.matrix[i][j] == 'A') {
                     traps.add(new Trap(i, j));
                 }
-                if (this.matrix[i][j] == 'C') {
-                    this.key = new Key(i, j);
-                }
-                if (this.matrix[i][j] == '=' || this.matrix[i][j] == '”') {
-                    this.door = new Door(i, j);
-                    door.setOpen(false);
-                } else if (this.matrix[i][j] == '_' || this.matrix[i][j] == ')') {
-                    this.door = new Door(i, j);
-                    door.setOpen(true);
-                }
                 if (this.matrix[i][j] == 'H') {
                     this.hero = new Hero(i, j);
                 }
                 if (this.matrix[i][j] == 'M') {
-                    this.whiteMummy = new WhiteMummy(i, j);
+                    whiteMummys.add(new WhiteMummy(i, j));
                 }
                 if (this.matrix[i][j] == 'V') {
-                    this.redMummy = new RedMummy(i, j);
+                    redMummys.add(new RedMummy(i, j));
                 }
                 if (this.matrix[i][j] == 'E') {
-                    this.scorpion = new Scorpion(i, j);
+                    scorpions.add(new Scorpion(i, j));
                 }
 
             }
@@ -101,58 +96,82 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveUp() {
         hero.moveUp(matrix);
-        setDoor();
         moveEnemies();
+        armadilha();
+        setDoor();
 
         verifyHeroAlive();
         verifyWinOfHero();
+        System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveRight() {
         hero.moveRight(matrix);
-        setDoor();
         moveEnemies();
+        armadilha();
+        setDoor();
 
         verifyHeroAlive();
         verifyWinOfHero();
+        System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveDown() {
         hero.moveDown(matrix);
-        setDoor();
         moveEnemies();
+        armadilha();
+        setDoor();
 
         verifyHeroAlive();
         verifyWinOfHero();
+        System.out.println(transformMatrixToString(matrix));
     }
 
     public void moveLeft() {
         hero.moveLeft(matrix);
-        setDoor();
         moveEnemies();
+        armadilha();
+        setDoor();
 
         verifyHeroAlive();
         verifyWinOfHero();
+        System.out.println(transformMatrixToString(matrix));
     }
 
     public void dontMove() {
         matrix[hero.getLine()][hero.getColumn()] = 'H';
         moveEnemies();
+        armadilha();
+        setDoor();
+
         verifyHeroAlive();
+        System.out.println(transformMatrixToString(matrix));
     }
 
 
     public void moveEnemies() {
-        if (whiteMummy != null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+        if (!scorpions.isEmpty()) {
+            for (Scorpion scorpion : scorpions) {
+                isHeroAlive = scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+                scorpion.hierarchy(matrix, scorpions);
+            }
         }
-        if (redMummy != null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+        if (!redMummys.isEmpty()) {
+            for (RedMummy redMummy : redMummys) {
+                isHeroAlive = redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+                redMummy.hierarchy(matrix, redMummys, scorpions);
+            }
         }
-        if (scorpion != null) {
-            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+        if (!whiteMummys.isEmpty()) {
+            for (WhiteMummy whiteMummy : whiteMummys) {
+                isHeroAlive = whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
+                whiteMummy.hierarchy(matrix, whiteMummys, redMummys, scorpions);
+            }
+
         }
+
     }
+
 
     public void verifyHeroAlive() {
         if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V' || matrix[getLineHero()][getColumnHero()] == 'E') {
@@ -169,36 +188,93 @@ public class MummyMazeState extends State implements Cloneable {
     public void setDoor() {
         if (key != null) {
             if (getLineHero() == getLineKey() && getColumnHero() == getColumnKey()) {
-                door.set(matrix);
+                for (Door door : doors) {
+                    if (matrix[door.getLine()][door.getColumn()] == ')') {
+                        door.closeVertical(matrix);
+                    } else if (matrix[door.getLine()][door.getColumn()] == '_') {
+                        door.closeHorizontal(matrix);
+                    } else if (matrix[door.getLine()][door.getColumn()] == '=') {
+                        door.openHorizontal(matrix);
+                    } else if (matrix[door.getLine()][door.getColumn()] == '"') {
+                        door.openVertical(matrix);
+                    }
+                }
+            }
+
+
+            if (!whiteMummys.isEmpty()) {
+                for (WhiteMummy whiteMummy : whiteMummys) {
+                    if (whiteMummy.getLine() == getLineKey() && whiteMummy.getColumn() == getColumnKey()) {
+                        for (Door door : doors) {
+                            if (matrix[door.getLine()][door.getColumn()] == ')') {
+                                door.closeVertical(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '_') {
+                                door.closeHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '=') {
+                                door.openHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '"') {
+                                door.openVertical(matrix);
+                            }
+                        }
+                    }
+                }
+            }
+            if (!redMummys.isEmpty()) {
+                for (RedMummy redMummy : redMummys) {
+                    if (redMummy.getLine() == getLineKey() && redMummy.getColumn() == getColumnKey()) {
+                        for (Door door : doors) {
+                            if (matrix[door.getLine()][door.getColumn()] == ')') {
+                                door.closeVertical(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '_') {
+                                door.closeHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '=') {
+                                door.openHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '"') {
+                                door.openVertical(matrix);
+                            }
+                        }
+                    }
+                }
+            }
+            if (!scorpions.isEmpty()) {
+                for (Scorpion scorpion : scorpions) {
+                    if (scorpion.getLine() == getLineKey() && scorpion.getLine() == getColumnKey()) {
+                        for (Door door : doors) {
+                            if (matrix[door.getLine()][door.getColumn()] == ')') {
+                                door.closeVertical(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '_') {
+                                door.closeHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '=') {
+                                door.openHorizontal(matrix);
+                            } else if (matrix[door.getLine()][door.getColumn()] == '"') {
+                                door.openVertical(matrix);
+                            }
+                        }
+                    }
+                }
             }
         }
-        if (whiteMummy != null) {
-            if (whiteMummy.getLine() == getLineKey() && whiteMummy.getColumn() == getColumnKey()) {
-                door.set(matrix);
-            }
-        }
-        if (redMummy != null) {
-            if (redMummy.getLine() == getLineKey() && redMummy.getColumn() == getColumnKey()) {
-                door.set(matrix);
-            }
-        }
-        if (scorpion != null) {
-            if (scorpion.getLine() == getLineKey() && scorpion.getLine() == getColumnKey()) {
-                door.set(matrix);
-            }
+        if (matrix[getLineKey()][getColumnKey()] == '.') {
+            matrix[getLineKey()][getColumnKey()] = 'C';
         }
     }
 
     public void armadilha() {
-        for (Trap trap : traps) {
-            if (trap.getLine() == getLineHero() && trap.getColumn() == getColumnHero()) {
+        int trapLine;
+        int trapColumn;
+        for (int i = 0; i < traps.size(); i++) {
+            trapLine = traps.get(i).getLine();
+            trapColumn = traps.get(i).getColumn();
+
+            if (trapLine == getLineHero() && trapColumn == getColumnHero()) {
                 isHeroAlive = false;
             }
-            if (matrix[trap.getLine()][trap.getColumn()] == '.') {
-                matrix[trap.getLine()][trap.getColumn()] = 'A';
+            if (matrix[trapLine][trapColumn] == '.') {
+                matrix[trapLine][trapColumn] = 'A';
             }
         }
     }
+
 
     @Override
     public boolean equals(Object other) {
@@ -234,7 +310,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     @Override
     public MummyMazeState clone() {
-        return new MummyMazeState(matrix);
+        return new MummyMazeState(matrix, key, doors, traps);
     }
 
     //Listeners
