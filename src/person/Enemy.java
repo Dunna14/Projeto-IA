@@ -1,18 +1,22 @@
 package person;
 
+import objectsInGame.Trap;
+
+import java.util.LinkedList;
+
 public abstract class Enemy extends Person {
 
     public Enemy(int lineHero, int columnHero) {
         super(lineHero, columnHero);
     }
 
-    public abstract void moveUp(char[][] matrix,int lineTrap,int columntrap);
+    public abstract void moveUp(char[][] matrix, LinkedList<Trap> traps);
 
-    public abstract void moveDown(char[][] matrix,int lineTrap,int columntrap);
+    public abstract void moveDown(char[][] matrix, LinkedList<Trap> traps);
 
-    public abstract void moveLeft(char[][] matrix,int lineTrap,int columntrap);
+    public abstract void moveLeft(char[][] matrix, LinkedList<Trap> traps);
 
-    public abstract void moveRight(char[][] matrix,int lineTrap,int columntrap);
+    public abstract void moveRight(char[][] matrix, LinkedList<Trap> traps);
 
     @Override
     public boolean canMoveUp(char[][] matrix) {

@@ -25,6 +25,7 @@ public class MummyMazeAgent extends Agent<MummyMazeState>{
         java.util.Scanner scanner = new java.util.Scanner(file);
 
         char[][] matrix = new char[13][13];
+
         
         for (int i = 0; i < 13; i++) {
             String line = scanner.nextLine();

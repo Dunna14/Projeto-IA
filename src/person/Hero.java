@@ -6,6 +6,7 @@ public class Hero extends Person {
         super(lineHero, columnHero);
     }
 
+    //ADICIONAR AS 2 PORTAS NOS CANMOVES
     public boolean canMoveUp(char[][] matrix) {
 
         return (getLine() == 1 && matrix[getLine() - 1][getColumn()] == 'S')

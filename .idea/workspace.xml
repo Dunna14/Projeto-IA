@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/objectsInGame/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/objectsInGame/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectsInGame/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectsInGame/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/RedMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/RedMummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Scorpion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
+    </list>
+    <list id="6afbcd62-fdd7-4350-b7e4-3382582d10f2" name="Changes by filip" comment="">
+      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <list id="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" name="Changes by Utilizador" comment="" />
@@ -32,6 +38,31 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/person/WhiteMummy.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="6" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="8" end1="9" start2="12" end2="13" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="14" end1="15" start2="18" end2="19" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="20" end1="21" start2="24" end2="25" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="25" end1="26" start2="29" end2="30" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="31" end1="32" start2="35" end2="36" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="37" end1="38" start2="41" end2="42" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="42" end1="43" start2="46" end2="47" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="49" end1="50" start2="53" end2="54" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="55" end1="56" start2="59" end2="60" changelist="6afbcd62-fdd7-4350-b7e4-3382582d10f2" />
+        <range start1="60" end1="61" start2="64" end2="65" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="74" end1="79" start2="78" end2="85" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="80" end1="80" start2="86" end2="89" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="85" end1="90" start2="94" end2="101" changelist="6afbcd62-fdd7-4350-b7e4-3382582d10f2" />
+        <range start1="91" end1="91" start2="102" end2="105" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="96" end1="101" start2="110" end2="117" changelist="6afbcd62-fdd7-4350-b7e4-3382582d10f2" />
+        <range start1="102" end1="102" start2="118" end2="121" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="107" end1="112" start2="126" end2="133" changelist="6afbcd62-fdd7-4350-b7e4-3382582d10f2" />
+        <range start1="113" end1="113" start2="134" end2="137" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -133,7 +164,9 @@
       <workItem from="1653315647074" duration="100000" />
       <workItem from="1653315773822" duration="152000" />
       <workItem from="1653382744553" duration="2656000" />
-      <workItem from="1653996176084" duration="7081000" />
+      <workItem from="1653996176084" duration="8147000" />
+      <workItem from="1654511015869" duration="1000" />
+      <workItem from="1654532168430" duration="9834000" />
     </task>
     <servers />
   </component>

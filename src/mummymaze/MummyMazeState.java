@@ -5,6 +5,7 @@ import agent.State;
 import objectsInGame.Door;
 import objectsInGame.Key;
 import objectsInGame.Stair;
+import objectsInGame.Trap;
 import person.Hero;
 import person.RedMummy;
 import person.Scorpion;
@@ -12,6 +13,7 @@ import person.WhiteMummy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class MummyMazeState extends State implements Cloneable {
 
@@ -21,8 +23,7 @@ public class MummyMazeState extends State implements Cloneable {
     private RedMummy redMummy;
     private Scorpion scorpion;
     private Stair stair;
-    private int trapLine;
-    private int trapColumn;
+    private LinkedList<Trap> traps;
     private Key key;
     private Door door;
     private boolean isHeroAlive = true;
@@ -30,6 +31,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     public MummyMazeState(char[][] matrix) {
         this.matrix = new char[matrix.length][matrix.length];
+        traps = new LinkedList<>();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -38,8 +40,7 @@ public class MummyMazeState extends State implements Cloneable {
                     this.stair = new Stair(i, j);
                 }
                 if (this.matrix[i][j] == 'A') {
-                    trapLine = i;
-                    trapColumn = j;
+                    traps.add(new Trap(i, j));
                 }
                 if (this.matrix[i][j] == 'C') {
                     this.key = new Key(i, j);
@@ -143,13 +144,13 @@ public class MummyMazeState extends State implements Cloneable {
 
     public void moveEnemies() {
         if (whiteMummy != null) {
-            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
+            whiteMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
         }
         if (redMummy != null) {
-            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
+            redMummy.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
         }
         if (scorpion != null) {
-            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, getLineTrap(), getColumnTrap());
+            scorpion.move(matrix, getLineHero(), getColumnHero(), isHeroAlive, traps);
         }
     }
 
@@ -169,6 +170,32 @@ public class MummyMazeState extends State implements Cloneable {
         if (key != null) {
             if (getLineHero() == getLineKey() && getColumnHero() == getColumnKey()) {
                 door.set(matrix);
+            }
+        }
+        if (whiteMummy != null) {
+            if (whiteMummy.getLine() == getLineKey() && whiteMummy.getColumn() == getColumnKey()) {
+                door.set(matrix);
+            }
+        }
+        if (redMummy != null) {
+            if (redMummy.getLine() == getLineKey() && redMummy.getColumn() == getColumnKey()) {
+                door.set(matrix);
+            }
+        }
+        if (scorpion != null) {
+            if (scorpion.getLine() == getLineKey() && scorpion.getLine() == getColumnKey()) {
+                door.set(matrix);
+            }
+        }
+    }
+
+    public void armadilha() {
+        for (Trap trap : traps) {
+            if (trap.getLine() == getLineHero() && trap.getColumn() == getColumnHero()) {
+                isHeroAlive = false;
+            }
+            if (matrix[trap.getLine()][trap.getColumn()] == '.') {
+                matrix[trap.getLine()][trap.getColumn()] = 'A';
             }
         }
     }
@@ -247,20 +274,18 @@ public class MummyMazeState extends State implements Cloneable {
         return stair.getColumn();
     }
 
-    public int getLineTrap() {
-        return trapLine;
-    }
-
-    public int getColumnTrap() {
-        return trapColumn;
-    }
-
     public int getLineKey() {
-        return key.getLine();
+        if (key != null) {
+            return key.getLine();
+        }
+        return 0;
     }
 
     public int getColumnKey() {
-        return key.getColumn();
+        if (key != null) {
+            return key.getColumn();
+        }
+        return 0;
     }
 
     public char[][] getMatrix() {
