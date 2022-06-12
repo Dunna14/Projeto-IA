@@ -12,15 +12,14 @@ import java.util.LinkedList;
 public class MummyMazeAgent extends Agent<MummyMazeState>{
     
     protected MummyMazeState initialEnvironment;
-    protected LinkedList<Trap> traps;
-    protected Key key;
-    protected LinkedList<Door> doors;
     
     public MummyMazeAgent(MummyMazeState environemt) {
         super(environemt);
         initialEnvironment = (MummyMazeState) environemt.clone();
-        heuristics.add(new HeuristicTileDistance());
-        heuristics.add(new HeuristicTilesOutOfPlace());
+
+        heuristics.add(new HeuristicStairDistance());
+        heuristics.add(new HeuristicEnemyDistance());
+        heuristics.add(new HeuristicEnemyLocked());
         heuristic = heuristics.get(0);
     }
             
@@ -33,8 +32,8 @@ public class MummyMazeAgent extends Agent<MummyMazeState>{
         java.util.Scanner scanner = new java.util.Scanner(file);
 
         char[][] matrix = new char[13][13];
-        traps = new LinkedList<>();
-        doors = new LinkedList<>();
+        MummyMazeState.traps = new LinkedList<>();
+        MummyMazeState.doors = new LinkedList<>();
         
         for (int i = 0; i < 13; i++) {
             String line = scanner.nextLine();
@@ -42,19 +41,15 @@ public class MummyMazeAgent extends Agent<MummyMazeState>{
 
             for (int j = 0; j < 13; j++) {
                 if (matrix[i][j] == 'C') {
-                    this.key = new Key(i, j);
+                    MummyMazeState.key = new Key(i, j);
                 }
-                if (matrix[i][j] == '=' || matrix[i][j] == '”') {
-                    doors.add(new Door(i, j));
-                    //door.getsetOpen(false);
-                } else if (matrix[i][j] == '_' || matrix[i][j] == ')') {
-                    doors.add(new Door(i, j));
-                    //door.setOpen(true);
+                if (matrix[i][j] == '=' || matrix[i][j] == '”' || matrix[i][j] == '_' || matrix[i][j] == ')') {
+                    MummyMazeState.doors.add(new Door(i, j));
                 }
             }
         }
         //Neste inicial vamos enviar as mumias e o seguinte!
-        initialEnvironment = new MummyMazeState(matrix, key, doors, traps);
+        initialEnvironment = new MummyMazeState(matrix);
         resetEnvironment();
         return environment;
     }

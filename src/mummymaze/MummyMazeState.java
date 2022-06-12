@@ -17,23 +17,20 @@ import java.util.LinkedList;
 
 public class MummyMazeState extends State implements Cloneable {
 
-    private char[][] matrix;
+    private final char[][] matrix;
     private Hero hero;
-    private LinkedList<WhiteMummy> whiteMummys;
-    private LinkedList<RedMummy> redMummys;
-    private LinkedList<Scorpion> scorpions;
+    private final LinkedList<WhiteMummy> whiteMummys;
+    private final LinkedList<RedMummy> redMummys;
+    private final LinkedList<Scorpion> scorpions;
     private Stair stair;
-    private LinkedList<Trap> traps;
-    private Key key;
-    private LinkedList<Door> doors;
+    public static LinkedList<Trap> traps;
+    public static Key key;
+    public static LinkedList<Door> doors;
     private boolean isHeroAlive = true;
 
 
-    public MummyMazeState(char[][] matrix, Key key, LinkedList<Door> doors, LinkedList<Trap> traps) {
+    public MummyMazeState(char[][] matrix) {
         this.matrix = new char[matrix.length][matrix.length];
-        this.traps = traps;
-        this.doors = doors;
-        this.key = key;
         whiteMummys = new LinkedList<>();
         redMummys = new LinkedList<>();
         scorpions = new LinkedList<>();
@@ -174,7 +171,8 @@ public class MummyMazeState extends State implements Cloneable {
 
 
     public void verifyHeroAlive() {
-        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V' || matrix[getLineHero()][getColumnHero()] == 'E') {
+        if (matrix[getLineHero()][getColumnHero()] == 'M' || matrix[getLineHero()][getColumnHero()] == 'V' ||
+                matrix[getLineHero()][getColumnHero()] == 'E' || matrix[getLineHero()][getColumnHero()] == 'A') {
             isHeroAlive = false;
         }
     }
@@ -200,7 +198,6 @@ public class MummyMazeState extends State implements Cloneable {
                     }
                 }
             }
-
 
             if (!whiteMummys.isEmpty()) {
                 for (WhiteMummy whiteMummy : whiteMummys) {
@@ -275,6 +272,94 @@ public class MummyMazeState extends State implements Cloneable {
         }
     }
 
+    public double computeStairDistance() {
+        return Math.abs(getLineHero() - getLineStair()) + Math.abs(getColumnHero() - getColumnStair());
+    }
+
+    public double computeEnemyDistance(boolean heroWin) {
+        double h = 0;
+        int contEnemies = 0;
+
+        if (heroWin) {
+            return 0;
+        }
+
+        for (WhiteMummy whiteMummy : whiteMummys) {
+            h += Math.abs(whiteMummy.getLine() - getLineHero()) + Math.abs(whiteMummy.getColumn() - getColumnHero());
+            if (h == 0) {
+                return 13 * 13;
+            }
+            contEnemies++;
+        }
+        for (RedMummy redMummy : redMummys) {
+            h += Math.abs(redMummy.getLine() - getLineHero()) + Math.abs(redMummy.getColumn() - getColumnHero());
+            if (h == 0) {
+                return 13 * 13;
+            }
+            contEnemies++;
+        }
+        for (Scorpion scorpion : scorpions) {
+            h += Math.abs(scorpion.getLine() - getLineHero()) + Math.abs(scorpion.getColumn() - getColumnHero());
+            if (h == 0) {
+                return 13 * 13;
+            }
+            contEnemies++;
+        }
+
+        return 13 / (h / contEnemies);
+    }
+
+    public double computeEnemyLocked(boolean heroWin) {
+        double h = 0;
+        int contEnemies = 0;
+        int numeroLimite = 0;
+
+        if (heroWin) {
+            return 0;
+        }
+
+        for (WhiteMummy whiteMummy : whiteMummys) {
+            if (!whiteMummy.canMoveUp(matrix) || !whiteMummy.canMoveDown(matrix) ||
+                    !whiteMummy.canMoveLeft(matrix) || !whiteMummy.canMoveRight(matrix)) {
+                h = 1;
+            } else {
+                h = numeroLimite;
+            }
+
+            if (h == 0) {
+                return numeroLimite;
+            }
+            contEnemies++;
+        }
+        for (RedMummy redMummy : redMummys) {
+            if (!redMummy.canMoveUp(matrix) || !redMummy.canMoveDown(matrix) ||
+                    !redMummy.canMoveLeft(matrix) || !redMummy.canMoveRight(matrix)) {
+                h = 1;
+            } else {
+                h = numeroLimite;
+            }
+
+            if (h == 0) {
+                return numeroLimite;
+            }
+            contEnemies++;
+        }
+        for (Scorpion scorpion : scorpions) {
+            if (!scorpion.canMoveUp(matrix) || !scorpion.canMoveDown(matrix) ||
+                    !scorpion.canMoveLeft(matrix) || !scorpion.canMoveRight(matrix)) {
+                h = 1;
+            } else {
+                h = numeroLimite;
+            }
+
+            if (h == 0) {
+                return numeroLimite;
+            }
+            contEnemies++;
+        }
+
+        return 13 / (h / contEnemies);
+    }
 
     @Override
     public boolean equals(Object other) {
@@ -310,7 +395,7 @@ public class MummyMazeState extends State implements Cloneable {
 
     @Override
     public MummyMazeState clone() {
-        return new MummyMazeState(matrix, key, doors, traps);
+        return new MummyMazeState(matrix);
     }
 
     //Listeners
@@ -366,6 +451,14 @@ public class MummyMazeState extends State implements Cloneable {
 
     public char[][] getMatrix() {
         return matrix;
+    }
+
+    public void setMatrix(char[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                this.matrix[i][j] = matrix[i][j];
+            }
+        }
     }
 
     public boolean isHeroAlive() {

@@ -3,20 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Niveis/nivel_so_com_heroi_e_mumia.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/gui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/gui/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/HeuristicTileDistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/HeuristicTilesOutOfPlace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicTileDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicStairDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicTilesOutOfPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectsInGame/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectsInGame/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/RedMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/RedMummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Scorpion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/person/WhiteMummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/WhiteMummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchmethods/GraphSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/GraphSearch.java" afterDir="false" />
     </list>
-    <list id="6afbcd62-fdd7-4350-b7e4-3382582d10f2" name="Changes by filip" comment="">
-      <change beforePath="$PROJECT_DIR$/src/person/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Scorpion.java" afterDir="false" />
+    <list id="3f271f0e-d8f8-4881-9f96-996d7819a194" name="Changes by filip" comment="">
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
     </list>
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <list id="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" name="Changes by Utilizador" comment="" />
@@ -44,21 +44,28 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/person/Scorpion.java">
+    <file path="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java">
       <ranges>
-        <range start1="11" end1="12" start2="11" end2="11" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="13" end1="15" start2="12" end2="14" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="16" end1="70" start2="15" end2="40" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="73" end1="74" start2="43" end2="44" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="78" end1="86" start2="48" end2="49" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="87" end1="88" start2="50" end2="50" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="92" end1="100" start2="54" end2="55" changelist="6afbcd62-fdd7-4350-b7e4-3382582d10f2" />
-        <range start1="101" end1="102" start2="56" end2="56" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="106" end1="114" start2="60" end2="61" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="115" end1="116" start2="62" end2="62" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="120" end1="128" start2="66" end2="67" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="129" end1="130" start2="68" end2="68" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="131" end1="131" start2="69" end2="87" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="14" end1="17" start2="14" end2="14" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="21" end1="23" start2="18" end2="22" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="35" end1="37" start2="34" end2="36" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
+        <range start1="44" end1="45" start2="43" end2="44" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
+        <range start1="46" end1="52" start2="45" end2="47" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
+        <range start1="56" end1="57" start2="51" end2="52" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java">
+      <ranges>
+        <range start1="19" end1="20" start2="19" end2="20" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="21" end1="24" start2="21" end2="24" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="25" end1="28" start2="25" end2="28" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="31" end1="32" start2="31" end2="32" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="33" end1="36" start2="33" end2="33" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
+        <range start1="176" end1="177" start2="173" end2="175" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="203" end1="204" start2="201" end2="201" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="277" end1="277" start2="274" end2="362" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="312" end1="313" start2="397" end2="398" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
+        <range start1="369" end1="369" start2="454" end2="462" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
       </ranges>
     </file>
   </component>
@@ -92,6 +99,9 @@
       <recent name="C:\Users\Utilizador\OneDrive - IPLeiria\Desktop\Search\src\gui" />
       <recent name="C:\Users\Utilizador\OneDrive - IPLeiria\Desktop\Search\src" />
       <recent name="C:\Users\Anabela\IdeaProjects\Search\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mummymaze" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +174,9 @@
       <workItem from="1653382744553" duration="2656000" />
       <workItem from="1653996176084" duration="8147000" />
       <workItem from="1654511015869" duration="1000" />
-      <workItem from="1654532168430" duration="30376000" />
+      <workItem from="1654532168430" duration="30975000" />
+      <workItem from="1655030518537" duration="7000" />
+      <workItem from="1655041416875" duration="7536000" />
     </task>
     <servers />
   </component>
