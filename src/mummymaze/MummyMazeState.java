@@ -309,6 +309,10 @@ public class MummyMazeState extends State implements Cloneable {
         return 13 / (h / contEnemies);
     }
 
+    public double computeEnemyAndStairDistance(boolean heroWin) {
+        return computeEnemyDistance(heroWin) + computeStairDistance();
+    }
+
     public double computeEnemyLocked(boolean heroWin) {
         double h = 0;
         int contEnemies = 0;

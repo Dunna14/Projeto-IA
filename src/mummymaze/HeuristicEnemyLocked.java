@@ -6,7 +6,7 @@ public class HeuristicEnemyLocked extends Heuristic<MummyMazeProblem, MummyMazeS
 
     @Override
     public double compute(MummyMazeState state) {
-        return state.computeEnemyDistance(problem.isGoal(state));
+        return state.computeEnemyLocked(problem.isGoal(state));
     }
     
     @Override

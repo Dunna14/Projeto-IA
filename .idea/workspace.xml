@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/gui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/gui/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/HeuristicTileDistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/HeuristicTilesOutOfPlace.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicTileDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicStairDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicTilesOutOfPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyAndStairDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyAndStairDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyLocked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyLocked.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
     </list>
-    <list id="3f271f0e-d8f8-4881-9f96-996d7819a194" name="Changes by filip" comment="">
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
-    </list>
+    <list id="3f271f0e-d8f8-4881-9f96-996d7819a194" name="Changes by filip" comment="" />
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
     <list id="a4e02d42-6b84-4808-8c52-1c0bdbeaad6d" name="Changes by Utilizador" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,32 +37,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java">
-      <ranges>
-        <range start1="14" end1="17" start2="14" end2="14" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="21" end1="23" start2="18" end2="22" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="35" end1="37" start2="34" end2="36" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
-        <range start1="44" end1="45" start2="43" end2="44" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
-        <range start1="46" end1="52" start2="45" end2="47" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
-        <range start1="56" end1="57" start2="51" end2="52" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java">
-      <ranges>
-        <range start1="19" end1="20" start2="19" end2="20" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="21" end1="24" start2="21" end2="24" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="25" end1="28" start2="25" end2="28" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="31" end1="32" start2="31" end2="32" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="33" end1="36" start2="33" end2="33" changelist="3f271f0e-d8f8-4881-9f96-996d7819a194" />
-        <range start1="176" end1="177" start2="173" end2="175" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="203" end1="204" start2="201" end2="201" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="277" end1="277" start2="274" end2="362" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="312" end1="313" start2="397" end2="398" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-        <range start1="369" end1="369" start2="454" end2="462" changelist="7a091b84-42a2-4966-937e-8409e68ac26b" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -177,6 +146,7 @@
       <workItem from="1654532168430" duration="30975000" />
       <workItem from="1655030518537" duration="7000" />
       <workItem from="1655041416875" duration="7536000" />
+      <workItem from="1655049207380" duration="330000" />
     </task>
     <servers />
   </component>
@@ -193,7 +163,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
