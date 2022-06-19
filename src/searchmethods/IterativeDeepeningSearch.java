@@ -45,16 +45,17 @@ public class IterativeDeepeningSearch extends DepthLimitedSearch {
 
         while (!frontier.isEmpty() && !stopped) {
             Node n = (Node) frontier.poll();
-            State state = n.getState();
-            if (n.getDepth() == limit && problem.isGoal(state)) {
-                return new Solution(problem, n);
-            }
             int numSuccessorsSize = 0;
             if (n.getDepth() < limit) {
+                State state = n.getState();
                 List<Action> actions = problem.getActions(state);
                 numSuccessorsSize = actions.size();
                 for(Action action : actions){
                     State successor = problem.getSuccessor(state, action);
+                    if (n.getDepth() == limit - 1 && problem.isGoal(successor)) {
+                        Node successorNode = new Node(successor, n);
+                        return new Solution(problem, successorNode);
+                    }
                     addSuccessorToFrontier(successor, n);
                 }
             }

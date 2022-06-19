@@ -21,12 +21,13 @@ public class DepthFirstSearch extends GraphSearch<NodeLinkedList> {
         while (!frontier.isEmpty() && !stopped) {
             Node n = frontier.poll();
             State state = n.getState();
-            if (problem.isGoal(state)) {
-                return new Solution(problem, n);
-            }
             List<Action> actions = problem.getActions(state);
             for(Action action : actions){
                 State successor = problem.getSuccessor(state, action);
+                if (problem.isGoal(successor)) {
+                    Node successorNode = new Node(successor, n);
+                    return new Solution(problem, successorNode);
+                }
                 addSuccessorToFrontier(successor, n);
             }
             computeStatistics(actions.size());

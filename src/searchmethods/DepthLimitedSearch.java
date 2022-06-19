@@ -25,16 +25,17 @@ public class DepthLimitedSearch extends DepthFirstSearch {
 
         while (!frontier.isEmpty() && !stopped) {
             Node n = (Node) frontier.poll();
-            State state = n.getState();
-            if (problem.isGoal(state)) {
-                return new Solution(problem, n);
-            }
             int successorsSize = 0;
             if (n.getDepth() < limit) {
+                State state = n.getState();
                 List<Action> actions = problem.getActions(state);
                 successorsSize = actions.size();
                 for(Action action : actions){
                     State successor = problem.getSuccessor(state, action);
+                    if (problem.isGoal(successor)) {
+                        Node successorNode = new Node(successor, n);
+                        return new Solution(problem, successorNode);
+                    }
                     addSuccessorToFrontier(successor, n);
                 }
             }
@@ -45,6 +46,10 @@ public class DepthLimitedSearch extends DepthFirstSearch {
 
     public void setLimit(int limit) {
         this.limit = limit;
+    }
+
+    public double getLimit() {
+        return limit;
     }
 
     @Override

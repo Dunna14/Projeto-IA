@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a091b84-42a2-4966-937e-8409e68ac26b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/mummymaze/MummyMazeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyAndStairDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyAndStairDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyLocked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/HeuristicEnemyLocked.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mummymaze/MummyMazeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/AStarSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/AStarSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/BeamSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/BeamSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/BreadthFirstSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/DepthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/DepthFirstSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/DepthLimitedSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/DepthLimitedSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/IterativeDeepeningSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MummyMaze/searchmethods/IterativeDeepeningSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/AStarSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/AStarSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/BeamSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/BeamSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/BreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/DepthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/DepthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/DepthLimitedSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/DepthLimitedSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchmethods/IterativeDeepeningSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchmethods/IterativeDeepeningSearch.java" afterDir="false" />
     </list>
     <list id="3f271f0e-d8f8-4881-9f96-996d7819a194" name="Changes by filip" comment="" />
     <list id="e2b8c5e7-d2d5-4763-b316-6307000b6d3b" name="Changes by ricar" comment="" />
@@ -147,6 +152,10 @@
       <workItem from="1655030518537" duration="7000" />
       <workItem from="1655041416875" duration="7536000" />
       <workItem from="1655049207380" duration="330000" />
+      <workItem from="1655578880447" duration="4770000" />
+      <workItem from="1655625221365" duration="612000" />
+      <workItem from="1655647386669" duration="5841000" />
+      <workItem from="1655662847963" duration="965000" />
     </task>
     <servers />
   </component>
@@ -163,6 +172,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
