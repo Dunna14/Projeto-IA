@@ -316,7 +316,7 @@ public class MummyMazeState extends State implements Cloneable {
     public double computeEnemyLocked(boolean heroWin) {
         double h = 0;
         int contEnemies = 0;
-        int numeroLimite = 0;
+        int numeroLimite = 13*13;
 
         if (heroWin) {
             return 0;
